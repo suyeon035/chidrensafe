@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안전 예방 페이지</title>
+    <!-- Jua 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+    <div class="background-container">
+        <!-- 배경 이미지 -->
+        <img src="38.jpg" alt="배경 이미지" class="background-image">
+
+        <!-- 왼쪽에서 오른쪽으로 이동하는 캐릭터 이미지 -->
+        <div class="moving-container">
+            <img src="w1.png" alt="캐릭터" class="moving-image">
+        </div>
+
+        <!-- 중앙에 배치된 정적 이미지 (욕조) -->
+        <div class="container">
+            <img src="G49.png" alt="안전 예방 아이템" class="static-image">
+        </div>
+
+        <!-- 물방울 효과 -->
+        <div class="water-drops"></div>
+
+        <div id="textBox" class="text-box" style="display: none;">
+            <div class="text-overlay">
+                <span id="line1" class="text-animated"></span>
+                <span id="line2" class="text-animated"></span>
+                <span id="line3" class="text-animated"></span>
+                <span id="line4" class="text-animated"></span>
+                <span id="line5" class="text-animated"></span>
+            </div>
+        </div>
+
+        <div id="warning-screen" class="warning-screen">
+                <span class="warning-text">안전사고위험!<br>사고를 막아주세요</span>
+                <button id="prevent-button" class="prevent-button">안전사고 예방</button>
+            </div>
+        </div>
+
+        <!-- 오디오 파일 -->
+        <audio id="audio1" src="T41.mp3" preload="auto"></audio>
+        <audio id="audio2" src="T42.mp3" preload="auto"></audio>
+
+        <!-- 시작 버튼 -->
+        <button id="start-button">예방하기</button>
+    </div>
+    
+    <script src="script4.js"></script>
+</body>
+</html>

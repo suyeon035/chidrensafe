@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퀘스트 완료!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles7.css">
+</head>
+<body>
+  <div id="questScreen" class="container">
+    <h1 class="title">🎉 퀘스트 완료! 🎉</h1>
+    <p class="subtitle">보상을 받으려면 버튼을 눌러보세요!</p>
+    
+    <button id="completeButton" class="quest-button">보상 확인하기</button>
+    
+    <div id="rewardCard" class="card-container" style="display: none;">
+        <div class="card flip-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <p class="preparing-message">🤔 보상이 준비 중이에요!</p>
+                </div>
+                <div class="card-back">
+                    <img src="C1.png" alt="Quest Reward Card">
+                </div>
+            </div>
+        </div>
+
+        <div id="congratsMessage" class="congrats-effect" style="display: none;"></div>
+
+        <button id="collectButton" class="quest-button" style="display: none;">
+            카드 수집하기
+        </button>
+    </div>
+</div>
+
+<!-- Card Collection Screen -->
+<div id="collectionScreen" style="display: none;" class="container">
+    <h1 class="title">📚 안전요원 카드 컬렉션</h1>
+    <div class="card-slots">
+        <div class="card-slot" id="slot1">
+            <div class="overlay">?</div>
+        </div>
+        <div class="card-slot" id="slot2">
+            <div class="overlay">?</div>
+        </div>
+        <div class="card-slot" id="slot3">
+            <div class="overlay">?</div>
+        </div>
+    </div>
+    <button id="restartButton" class="restart-button"><a href="test8.html">시작하기</a> </button>
+</div>
+
+<!-- Card Collection Modal -->
+<div id="collectionModal" class="modal">
+    <div class="modal-content">
+        <h2 class="modal-title">🚨 안전요원 되기</h2>
+        <p class="modal-description">
+            안전요원이 되기 위해서는 3장의 특별한 카드를 모아야 해요!<br>
+            퀘스트를 완료할 때마다 카드를 획득할 수 있어요.<br>
+            모든 카드를 모으면 진정한 안전요원이 될 수 있어요!<br>
+        </p>
+        <button id="modalConfirmButton" class="modal-button">확인</button>
+    </div>
+</div>
+
+  <script src="script7.js"></script>
+</body>
+</html>

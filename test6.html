@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안전사고 퀴즈 설명</title>
+    <!-- Jua 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles6.css">
+</head>
+<body>
+    <div class="background-container">
+        <!-- 배경 이미지 -->
+        <img src="38.jpg" alt="배경 이미지" class="background-image">
+
+        <!-- 검은 투명도 오버레이 -->
+        <div class="overlay"></div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="content-container">
+            <!-- 이미지 -->
+            <div class="image-container">
+                <img src="37.png" alt="스토리 이미지" class="main-image">
+                <div id="overlay-x" class="overlay-x" style="display: none;">X</div>
+            </div>
+
+            <div id="start-container">
+                <button id="start-button">대사 시작</button>
+            </div>
+
+            <div class="text-container">
+                <p id="dialogue-text"></p>
+                <button id="next-button" class="arrow-button">→</button>
+            </div>
+
+            <div id="quiz-container" class="quiz-overlay" style="display: none;">
+                <div class="quiz-content">
+                    <p id="quiz-question">콘센트에 물을 뿌리는 행동은 안전하다.</p>
+                    <div class="quiz-options">
+                        <button id="option-o" class="quiz-button quiz-o">O</button>
+                        <button id="option-x" class="quiz-button quiz-x">X</button>
+                    </div>
+                    <p id="quiz-result" class="quiz-result"></p>
+                </div>
+            </div>
+
+            <div id="completion-container" class="completion-container" style="display: none;">
+                <p>퀴즈를 모두 완료했습니다!</p>
+                <button id="completion-button" class="completion-button">완료</button>
+            </div>   
+        </div>
+    </div>
+    <script src="script6.js"></script>
+</body>
+</html>

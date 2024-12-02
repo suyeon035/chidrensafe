@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구연동화 효과</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
+    <div class="background-container">
+      <img src="11.jpg" alt="배경 이미지" class="background-image" />
+
+      <div class="text-overlay">
+        <div class="text-box">
+          <span id="line1" class="text-animated"></span>
+          <span id="line2" class="text-animated"></span>
+          <span id="line3" class="text-animated"></span>
+          <span id="line4" class="text-animated"></span>
+          <span id="line5" class="text-animated"></span>
+          <span id="line6" class="text-animated"></span>
+          <span id="line7" class="text-animated"></span>
+          <span id="line8" class="text-animated"></span>
+          <span id="line9" class="text-animated"></span>
+          <span id="line10" class="text-animated"></span>
+          <span id="line11" class="text-animated"></span>
+          <span id="line12" class="text-animated"></span>
+        </div>
+      </div>
+
+      <img
+        id="second-image"
+        src="bread_1.png"
+        alt="두 번째 이미지"
+        class="slide-in"
+        style="display: none"
+      />
+      <img
+        id="fifth-image"
+        src="bread_3.png"
+        alt="다섯 번째 이미지"
+        class="slide-in"
+        style="display: none"
+      />
+      <img
+        id="ninth-image"
+        src="bread_1.png"
+        alt="다섯 번째 이미지"
+        class="slide-in"
+        style="display: none"
+      />
+
+      <!-- 오디오 파일 -->
+      <audio id="audio1" src="b1.mp3" preload="auto"></audio>
+      <audio id="audio2" src="b2.mp3" preload="auto"></audio>
+      <audio id="audio3" src="b3.mp3" preload="auto"></audio>
+      <audio id="audio4" src="b4.mp3" preload="auto"></audio>
+      <audio id="audio5" src="b5.mp3" preload="auto"></audio>
+      <audio id="audio6" src="b6.mp3" preload="auto"></audio>
+      <audio id="audio7" src="b7.mp3" preload="auto"></audio>
+      <audio id="audio8" src="b8.mp3" preload="auto"></audio>
+      <audio id="audio9" src="b9.mp3" preload="auto"></audio>
+      <audio id="audio10" src="b10.mp3" preload="auto"></audio>
+      <audio id="audio11" src="b11.mp3" preload="auto"></audio>
+      <audio id="audio12" src="b12.mp3" preload="auto"></audio>
+    </div>
+
+    <button id="start-button" style="display: flex">문 두드리기</button>
+
+    <div id="overlay" class="overlay" style="display: none">
+      <div class="message-box">
+        <button id="close-button" class="close-button">X</button>
+        <p>
+          안전 요원 미션 안내<br /><br />
+          첫번째, 브레드이발소에 숨겨진 안전사고를 찾아주세요. <br /><br />
+          두번째, 안전사고를 찾아서 사고를 막아주세요. <br /><br />
+          세번째, 사고가 다시는 일어나지 않도록 예방카드를 모아주세요.<br /><br />
+          네번째, 모든 예방카드를 모으면 임무 완료! <br /><br />
+        </p>
+        <!-- 다음 페이지로 이동하는 버튼 -->
+        <button id="proceed-button" style="display: none">
+          다음 페이지로 가기
+        </button>
+      </div>
+    </div>
+
+    <script src="script2.js"></script>
+  </body>
+</html>

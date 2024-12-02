@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안전사고 퀴즈</title>
+    <!-- Jua 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles5.css">
+</head>
+<body>
+    <div class="background-container">
+        <!-- 배경 이미지 -->
+        <img src="38.jpg" alt="배경 이미지" class="background-image">
+
+        <!-- 왼쪽에서 오른쪽으로 이동하는 캐릭터 이미지 -->
+        <div class="moving-container">
+            <img src="w1.png" alt="캐릭터" class="moving-image">
+        </div>
+
+        <!-- 중앙에 배치된 정적 이미지 (욕조) -->
+        <div class="container">
+            <img src="G49.png" alt="안전 예방 아이템" class="static-image">
+        </div>
+
+        <div class="background-overlay"></div>
+
+        <!-- 퀴즈 컨테이너 -->
+        <div id="quiz-container">
+            <h2>안전사고 퀴즈</h2>
+            <p>어떻게 해야 할까요?</p>
+            <div class="quiz-options">
+                <button class="quiz-card" data-answer="1">1번: 더 첨벙첨벙 샤워를 한다.</button>
+                <button class="quiz-card" data-answer="2">2번: 물이 콘센트에 튀지 않도록 조심한다.</button>
+                <button class="quiz-card" data-answer="3">3번: 콘센트 말고 바닥에 물을 뿌린다.</button>
+            </div>
+            <div id="quiz-result"></div>
+            <!-- "다음" 버튼 미리 추가 (초기에는 숨김 처리) -->
+            <button id="next-button" class="next-button" style="display: none;">다음</button>
+            </div>
+            <audio id="correct-sound" src="right.mp3"></audio>
+            <audio id="wrong-sound" src="wrong.mp3"></audio>
+        </div>
+    </div>
+
+
+    <script src="script5.js"></script>
+</body>
+</html>
