@@ -1,24 +1,16 @@
-const audioPlayed = [false, false, false, false, false];
-const backgroundMusic = document.getElementById("backgroundMusic");
-const clickMessage = document.getElementById("clickMessage");
-const scrollButton = document.getElementById("scrollButton");
-const musicToggleButton = document.getElementById("musicToggleButton");
+// 반응형 높이 계산
+const updateHeights = () => {
+  const mainElement = document.querySelector(".main"); // .main 요소를 동적으로 선택
+  const viewportHeight = window.innerHeight; // 현재 뷰포트 높이
+  const totalHeight = mainElement ? mainElement.offsetHeight : 5700; // .main 높이 또는 기본값
+  const sectionHeight = totalHeight / images.length; // 각 섹션 높이
+  const startOffset = viewportHeight * 0.2; // 뷰포트 높이에 비례한 시작 오프셋
 
-const images = [
-  document.getElementById("image1"),
-  document.getElementById("image2"),
-  document.getElementById("image3"),
-  document.getElementById("image4"),
-  document.getElementById("image5"),
-];
+  return { totalHeight, sectionHeight, startOffset };
+};
 
-const audios = [
-  document.getElementById("audio1"),
-  document.getElementById("audio2"),
-  document.getElementById("audio3"),
-  document.getElementById("audio4"),
-  document.getElementById("audio5"),
-];
+// 초기 높이 설정
+let { totalHeight, sectionHeight, startOffset } = updateHeights();
 
 // 페이지 로드 시 클릭 유도 메시지 표시
 window.addEventListener("load", () => {
@@ -44,9 +36,6 @@ document.addEventListener("click", () => {
 // 스크롤 이벤트 핸들러 (이미지 및 오디오 제어)
 window.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;
-  const totalHeight = 5700; // 스크롤 가능한 총 높이 (CSS에 설정된 .main 높이와 맞춤)
-  const sectionHeight = totalHeight / images.length;
-  const startOffset = 300; // 조정 가능한 시작 오프셋
 
   // 이미지 및 오디오 제어
   images.forEach((image, index) => {
@@ -85,6 +74,15 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// 창 크기 변경 시 반응형 처리
+window.addEventListener("resize", () => {
+  // 높이를 다시 계산
+  const heights = updateHeights();
+  totalHeight = heights.totalHeight;
+  sectionHeight = heights.sectionHeight;
+  startOffset = heights.startOffset;
+});
+
 // 다음 페이지 이동 버튼 클릭 이벤트
 if (scrollButton) {
   scrollButton.addEventListener("click", () => {
@@ -102,4 +100,4 @@ if (musicToggleButton) {
         : "음악 끄기";
     }
   });
-}
+});
