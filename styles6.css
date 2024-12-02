@@ -1,0 +1,331 @@
+/* 전체 페이지 초기화 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Jua", sans-serif;
+    overflow: hidden;
+}
+
+/* 배경 컨테이너 */
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 배경 이미지 */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3; /* 가장 뒤에 배치 */
+}
+
+/* 검은 투명도 오버레이 */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 검은색 투명도 */
+    z-index: -2; /* 배경 위에 배치 */
+}
+
+/* 메인 컨텐츠 */
+.content-container {
+    position: relative; /* 부모의 중앙에 배치 */
+    z-index: 10; /* 오버레이 위에 배치 */
+    text-align: center; /* 텍스트 정렬 */
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+}
+
+/* 이미지 */
+.main-image {
+    width: 90%;
+    max-width: 900px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px; /* 텍스트와의 간격 */
+}
+
+/* 대사 시작 버튼을 화면 중앙에 배치 */
+#start-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#start-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Jua", sans-serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#start-button:hover {
+    background-color: #0056b3;
+}
+
+/* 텍스트 컨테이너 */
+.text-container {
+    display: flex;
+    align-items: center; /* 텍스트와 버튼 세로 중앙 정렬 */
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은 배경 */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 90%; /* 이미지와 동일한 너비 */
+    max-width: 780px;
+}
+
+
+/* 텍스트 */
+#dialogue-text {
+    flex-grow: 1; /* 버튼을 제외한 공간 차지 */
+    text-align: left;
+}
+
+/* 화살표 버튼 */
+.arrow-button {
+    background-color: #4CAF50; /* 초록색 배경 */
+    color: white;
+    border: none;
+    font-size: 24px; /* 화살표 크기 */
+    font-weight: bold; /* 글자 두께 */
+    cursor: pointer;
+    width: 50px; /* 버튼의 고정된 너비 */
+    height: 50px; /* 버튼의 고정된 높이 */
+    border-radius: 50%; /* 동그란 모양 */
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: pulse 1.5s infinite; /* 버튼 깜빡이는 효과 */
+    line-height: 1; /* 텍스트의 줄 높이 고정 */
+}
+
+/* 호버 효과 */
+.arrow-button:hover {
+    transform: scale(1.2); /* 크기 확대 */
+    background-color: #45A049; /* 더 밝은 초록색 */
+}
+
+/* 화살표 애니메이션 */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1); /* 중간 크기 확대 */
+    }
+}
+
+/* 페이드 애니메이션 */
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 퀴즈 오버레이 - 메인 이미지 위에 표시 */
+.quiz-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* 반투명 검정 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* 가장 위에 표시 */
+}
+
+/* 퀴즈 컨텐츠 */
+.quiz-content {
+    text-align: center;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1); /* 투명 배경 */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    font-size: 24px; 
+}
+
+/* 퀴즈 옵션 버튼 */
+.quiz-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.quiz-button {
+    font-size: 50px;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* O 버튼 스타일 */
+.quiz-o {
+    background-color: #4CAF50; /* 초록색 */
+    color: white;
+}
+
+.quiz-o:hover {
+    background-color: #45A049; /* 밝은 초록색 */
+    transform: scale(1.2);
+}
+
+/* X 버튼 스타일 */
+.quiz-x {
+    background-color: #F44336; /* 빨간색 */
+    color: white;
+}
+
+.quiz-x:hover {
+    background-color: #D32F2F; /* 어두운 빨간색 */
+    transform: scale(1.2);
+}
+
+/* 퀴즈 결과 텍스트 */
+.quiz-result {
+    font-size: 24px;
+    margin-top: 20px;
+    color: white;
+}
+
+/* 다음 버튼 스타일 */
+.next-quiz-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "Jua", sans-serif;
+    color: white;
+    background-color: #007BFF; /* 파란색 버튼 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.next-quiz-button:hover {
+    background-color: #0056b3; /* 어두운 파란색 */
+    transform: scale(1.1);
+}
+
+/* X 표시 스타일 */
+.overlay-x {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    pointer-events: none; /* 클릭 비활성화 */
+    z-index: 10; /* 이미지 위에 표시 */
+}
+
+.completion-container {
+    display: none; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* 텍스트 중앙 정렬 */
+    background: rgba(0, 0, 0, 0.8); /* 검은 반투명 배경 */
+    padding: 30px 20px; /* 내부 여백 */
+    border-radius: 15px; /* 둥근 모서리 */
+    color: white; /* 텍스트 색상 */
+    font-family: "Jua", sans-serif; /* 폰트 설정 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* 그림자 효과 */
+    width: auto; /* 컨테이너 크기를 텍스트에 맞춤 */
+    max-width: 400px; /* 최대 너비 제한 */
+    display: flex; /* 플렉스 박스로 전환 */
+    flex-direction: column; /* 세로 배치 */
+    justify-content: center; /* 세로 정렬 */
+    align-items: center; /* 가로 정렬 */
+}
+
+.completion-container p {
+    font-size: 18px; /* 텍스트 크기 */
+    line-height: 1.5; /* 줄 간격 */
+    margin-bottom: 20px; /* 텍스트와 버튼 간의 간격 */
+    white-space: normal; /* 텍스트 줄바꿈 허용 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    writing-mode: horizontal-tb; /* 가로 방향으로 텍스트 표시 */
+}
+
+.completion-button {
+    padding: 12px 20px; /* 버튼 크기 */
+    font-size: 18px; /* 버튼 텍스트 크기 */
+    background-color: #007bff; /* 파란색 배경 */
+    color: white; /* 흰색 텍스트 */
+    border: none; /* 테두리 제거 */
+    border-radius: 8px; /* 둥근 버튼 */
+    cursor: pointer; /* 커서 변경 */
+    transition: background-color 0.3s ease; /* 호버 애니메이션 */
+    font-family: "Jua", sans-serif;
+}
+
+.completion-button:hover {
+    background-color: #0056b3; /* 호버 상태에서 색상 변경 */
+}
+
+.completion-button:active {
+    transform: scale(0.95); /* 클릭 시 살짝 줄어드는 효과 */
+}

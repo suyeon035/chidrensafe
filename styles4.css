@@ -1,0 +1,191 @@
+/* 기본 스타일 */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Jua", sans-serif;
+}
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* 배경 이미지 (스크린 크기와 관계없이 고정) */
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 캐릭터 애니메이션 */
+.moving-container {
+  position: absolute;
+  top: 50%;
+  left: 40%; /* 고정 위치 */
+  transform: translateY(-5%);
+}
+
+.moving-image {
+  width: 930px; /* 고정된 크기 */
+  height: auto;
+  animation: moveCharacter 4s linear forwards, bounce 1s infinite ease-in-out;
+}
+
+@keyframes moveCharacter {
+  0% {
+    left: -10%; /* 시작 위치 */
+  }
+  100% {
+    left: 30%; /* 끝 위치 */
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(-60%);
+  }
+}
+
+/* 정적 이미지 (욕조) */
+.container {
+  position: absolute;
+  top: 50%;
+  right: 200px; /* 고정 위치 */
+  transform: translateY(-50%);
+}
+
+.static-image {
+  width: 880px; /* 고정된 크기 */
+  height: auto;
+}
+
+/* 물방울 애니메이션 */
+.water-drop {
+  position: absolute;
+  background: rgba(42, 166, 255, 0.6);
+  border-radius: 50%;
+  animation: waterSplash 1.5s ease-in-out infinite;
+}
+
+@keyframes waterSplash {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.2);
+  }
+}
+
+/* 텍스트 박스 및 텍스트 오버레이 합침 */
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8); /* 반투명 배경 */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  display: none;  /* 기본적으로 숨김 */
+  flex-direction: column;  /* 텍스트가 여러 줄일 수 있게 하기 */
+}
+
+/* 타이핑 애니메이션 텍스트 스타일 */
+.text-animated {
+  display: inline-block; /* 텍스트가 차례로 보이도록 설정 */
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  font-family: 'Jua', sans-serif;
+  padding: 5px 0;
+  display: none;
+}
+
+
+/* 시작 버튼 스타일 */
+#start-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 25px;
+  background-color: #ff5a5f;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Jua', sans-serif;
+}
+
+#start-button:hover {
+  background-color: #e04d51;
+}
+
+.warning-screen {
+  display: none; /* 초기에는 숨김 */
+  flex-direction: column; /* 수직 정렬 */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.8); /* 반투명 빨간색 배경 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  animation: blinkRed 1.5s infinite; /* 깜빡이는 애니메이션 추가 */
+}
+
+.warning-text {
+  font-family: 'Jua', sans-serif;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px; /* 예방 버튼과의 간격 */
+}
+
+.prevent-button {
+  padding: 12px 24px;
+  font-size: 30px;
+  font-family: 'Jua', sans-serif;
+  background-color: #ffb143;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prevent-button:hover {
+  background-color: #161616;
+}
+
+
+/* 빨간색 배경 반짝이기 애니메이션 */
+@keyframes blinkRed {
+    0% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 1); /* 완전 빨간색 */
+    }
+    100% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+}
