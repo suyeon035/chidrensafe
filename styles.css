@@ -45,7 +45,8 @@ body {
 
 .image {
   position: fixed;
-  width: 1300px; /* 기본 이미지 크기 */
+  width: 90%; /* 기본 이미지 크기 (화면 너비의 90%) */
+  max-width: 1300px; /* 최대 너비 설정 */
   opacity: 0; /* Initially hidden */
   transition: opacity 0.5s ease; /* 페이드 인/아웃을 부드럽게 */
   top: 50%; /* 이미지를 화면 중앙에 위치 */
@@ -54,10 +55,22 @@ body {
 }
 
 #image4 {
-  width: 1000px; /* 원하는 크기로 변경 */
-  height: auto; /* 비율을 유지하면서 높이 자동 조절 */
+  max-width: 100%; /* 화면 너비에 맞게 조정 */
+  height: auto; /* 비율 유지 */
 }
 
+/* 반응형 조정 */
+@media (max-width: 768px) {
+  .image {
+    width: 95%; /* 작은 화면에서는 더 작은 비율 사용 */
+  }
+}
+
+@media (max-width: 480px) {
+  .image {
+    width: 100%; /* 모바일 화면에서 최대 너비 */
+  }
+}
 #scrollButton {
   position: fixed;
   bottom: 20px; /* 화면 하단에서 20px 위에 위치 */
