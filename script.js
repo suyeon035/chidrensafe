@@ -61,7 +61,7 @@ window.addEventListener("scroll", () => {
       // 오디오 재생 제어
       if (!audioPlayed[index] && audios[index]) {
         audios[index].play().catch((error) => {
-          console.error(오디오 재생 실패 (audio${index + 1}):, error);
+          console.error(`오디오 재생 실패 (audio${index + 1}):`, error);
         });
         audioPlayed[index] = true;
       }
