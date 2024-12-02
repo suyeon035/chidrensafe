@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <img class="img-size" src="7.jpg" alt="설명 텍스트" />
+
+      <button id="musicToggleButton">음악 켜기</button>
+
+      <img src="Component 1.png" class="image" id="image1" />
+      <img src="Component 2.png" class="image" id="image2" />
+      <img src="Component 3.png" class="image" id="image3" />
+      <img src="Component 4.png" class="image" id="image4" />
+      <img src="Component 5.png" class="image" id="image5" />
+
+      <button
+        id="scrollButton"
+        style="display: none; position: fixed; bottom: 50px; right: 50px"
+      >
+        start
+      </button>
+
+      <div class="click-to-play" id="clickMessage">클릭하여 음악을 듣기</div>
+
+      <!-- 배경음 추가 -->
+      <audio
+        id="backgroundMusic"
+        src="background.mp3"
+        loop
+        preload="auto"
+        muted
+      ></audio>
+
+      <!-- 음성 파일 -->
+      <audio id="audio1" src="voice1.mp3" preload="auto"></audio>
+      <audio id="audio2" src="voice2.mp3" preload="auto"></audio>
+      <audio id="audio3" src="voice3.mp3" preload="auto"></audio>
+      <audio id="audio4" src="voice4.mp3" preload="auto"></audio>
+      <audio id="audio5" src="voice5.mp3" preload="auto"></audio>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
